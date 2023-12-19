@@ -1,6 +1,8 @@
 #!/bin/bash
 ID=$(id -u)
 echo "script name $0 "
+timestamp=$(date +%F-%H-%M-%S)
+logfile="/tmp/$0-$timestamp.log"
 validate(){
     if [ $1 -ne 0 ]
     then 
@@ -18,7 +20,7 @@ then
 else
     echo "You are the root user"
 fi
-yum install mysql -y
+yum install mysql -y &>> $logfile
 validate $? "Mysql"
-yum install git -y
+yum install git -y &>> $logfile
 validate $? "Git"
