@@ -18,6 +18,6 @@ else
     echo "You are the root user"
 fi
 yum install mysql -y
-validate $? "Installation of Mysql"
+validate $? "Mysql"
 yum install git -y
-validate $? "Installation of git"
+validate $? "Git"
