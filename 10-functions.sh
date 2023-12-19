@@ -1,12 +1,12 @@
 #!/bin/bash
 ID=$(id -u)
 validate(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then 
-        echo "Error-The installation is failed"
+        echo "Error-The installation of $2 is failed"
         exit 1
     else
-        echo "The installation is success"
+        echo "The installation of $2 is success"
     fi
 }
 
@@ -18,6 +18,6 @@ else
     echo "You are the root user"
 fi
 yum install mysql -y
-validate
+validate $? "Installation of Mysql"
 yum install git -y
-validate
+validate $? "Installation of git"
