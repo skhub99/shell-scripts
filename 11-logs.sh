@@ -3,22 +3,25 @@ ID=$(id -u)
 echo "script name $0 "
 timestamp=$(date +%F-%H-%M-%S)
 logfile="/tmp/$0-$timestamp.log"
+R="\e[31m"
+G="\e{[32m"
+N="\e[0m"
 validate(){
     if [ $1 -ne 0 ]
     then 
-        echo "Error-The installation of $2 is failed"
+        echo -e "Error-The installation of $2 is $R Failed $N"
         exit 1
     else
-        echo "The installation of $2 is success"
+        echo -e "The installation of $2 is $G Success $N"
     fi
 }
 
 if [ $ID -ne 0 ]
 then 
-    echo "Please run the script with root user"
+    echo -e "$R Please run the script with root user $N"
     exit 1
 else
-    echo "You are the root user"
+    echo -e "$G You are the root user $N"
 fi
 yum install mysql -y &>> $logfile
 validate $? "Mysql"
