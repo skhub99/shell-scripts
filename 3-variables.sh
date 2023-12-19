@@ -1,3 +1,3 @@
 #!/bin/bash
 DATE=$(date)
-echo "The date and time is : $DATE"
+echo "The script started executing at: ${DATE}"
