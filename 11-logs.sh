@@ -1,6 +1,6 @@
 #!/bin/bash
 ID=$(id -u)
-echo "script name $0 "
+echo " Script Name $0 "
 timestamp=$(date +%F-%H-%M-%S)
 logfile="/tmp/$0-$timestamp.log"
 R="\e[31m"
