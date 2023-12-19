@@ -3,6 +3,7 @@ ID=$(id -u)
 echo " Script Name $0 "
 timestamp=$(date +%F-%H-%M-%S)
 logfile="/tmp/$0-$timestamp.log"
+echo "Script started executing at $timestamp " &>> $logfile
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
