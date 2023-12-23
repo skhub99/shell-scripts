@@ -9,7 +9,7 @@ logfile="/tmp/$0-$timestamp.log"
 echo "Script started executing at $timestamp" &>> $logfile
 
 validate(){
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then 
         echo -e "$2...$R FAILED $N"
     else
