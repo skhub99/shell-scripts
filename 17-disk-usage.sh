@@ -1,5 +1,5 @@
 #!/bin/bash
-disk_usage=$(df -hT | grep -vE )
+disk_usage=$(df -hT | grep -vE 'tmp|file')
 disk_threshold=1
 message=""
 while IFS= read line
